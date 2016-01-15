@@ -39,7 +39,7 @@ object.size(df.td)
 print("size of df.td is 518544 bytes or 518.544KB")
 object.size(NHIS_2007_RData) 
 print("size of NHIS_2007_RData is 193048 bytes or 193.048KB")
-print("The df.csv and NHIS_2007_RData file have the smallest size. Besides the .dta file,the format of data inside these files are different so these files have different sizes.")
+print("The df.csv and NHIS_2007_RData file have the smallest size. Besides the .dta file,the format of data inside these files are different like there are space between variables or not so these files have different sizes.")
 
 #Question 3
 df.rdata <- (NHIS_2007_RData)
