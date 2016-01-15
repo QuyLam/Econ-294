@@ -39,7 +39,7 @@ object.size(df.td)
 print("size of df.td is 518544 bytes or 518.544KB")
 object.size(NHIS_2007_RData) 
 print("size of NHIS_2007_RData is 193048 bytes or 193.048KB")
-print("The df.csv and NHIS_2007_RData file have the smallest size. Besides the .dta file,")
+print("The df.csv and NHIS_2007_RData file have the smallest size. Besides the .dta file,the format of data inside these files are different so these files have different sizes.")
 
 #Question 3
 df.rdata <- (NHIS_2007_RData)
@@ -72,10 +72,9 @@ print("There are 521279 NAs ")
 
 #Question 5
 v <- c(1,2,3,4,5,6,7,4,NULL,NA)
-# dont get the NULL
 
 length(v)
-print("The lenght of vector v is 9.the number of values in vector dont match the number reported in length because R doesn't see NULL as a value in vector")
+print("The length of vector v is 9.The number of values in vector don't match the number reported in length because R doesn't see NULL as a value in vector")
 mean(v,na.rm = TRUE)
 print("mean of v when ignoring the NA value is 4")
 
@@ -105,7 +104,6 @@ clarity <- I(c("“SI1”", "“I1”", "“VI1”", "“VS1”","“IF”","“
 price <- c(850, 450, 450, NA, 750, 980, 420)
 diamonds <- data.frame(carat, cut, clarity, price)
 View(diamonds) # view the diamonds data frame
-mean(price)
 mean(price,na.rm=TRUE)
 print("the mean price is 650")
 #aggregate(price ~ cut,diamonds,mean) # the mean price of cut "fair"
