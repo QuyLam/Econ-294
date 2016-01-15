@@ -31,15 +31,12 @@ load(url("https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_200
 print("The name of this RData file is NHIS_2007_RData")
 
 #Question 2
-object.size(df.dta) 
-print("size of df.dta is 463168 bytes or 463.168KB")
-object.size(df.csv) 
-print("size of df.csv is 193048 bytes or 193.048KB")
-object.size(df.td) 
-print("size of df.td is 518544 bytes or 518.544KB")
-object.size(NHIS_2007_RData) 
-print("size of NHIS_2007_RData is 193048 bytes or 193.048KB")
-print("The df.csv and NHIS_2007_RData file have the smallest size. Besides the .dta file,the format of data inside these files are different like there are space between variables or not so these files have different sizes.")
+
+print("size of df.dta is  193KB")
+print("size of df.csv is 142KB")
+print("size of df.td is 142KB")
+print("size of NHIS_2007_RData is 46KB")
+print("The NHIS_2007_RData file have the smallest size. Besides the .dta file,the format of data inside these files are different like there are space between variables or not so these files have different sizes.Or the Rdata file contains data in type of binary so it's size is the smallest")
 
 #Question 3
 df.rdata <- (NHIS_2007_RData)
