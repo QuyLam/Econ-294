@@ -48,13 +48,20 @@ QuyLamAssignment2$s3a <- vec[seq(2, length(vec),2)]
 QuyLamAssignment2$s3b <-paste(vec[c(43,21,25)],collapse = "")
 
 arr <- array(c(letters,LETTERS),dim = c(3,3,3))
+QuyLamAssignment2$s3c <- paste(arr[1,1,2],arr[2,1,2],arr[3,1,2], sep = "")
+QuyLamAssignment2$s3d <- paste(arr[2,2,1],arr[2,2,2],arr[2,2,3], sep = "")
+QuyLamAssignment2$s3e <- paste(arr[2,3,2],arr[3,1,3],arr[1,3,3], sep = "")
+
+
 #Question 4
 org_example <- read.dta(
   file = "http://people.ucsc.edu/~aspearot/Econ_217_Data/org_example.dta"
 )
+sort(unique(org_example$year))
 sort(unique(org_example$month))
 sort(unique(org_example$educ))
 month <- aggregate(rw ~ month,org_example,mean)
 year <- aggregate(rw ~ year,org_example,mean)
 educ <- aggregate(rw ~ educ,org_example,mean)
+dd <- data.frame(year,month,educ)
 
