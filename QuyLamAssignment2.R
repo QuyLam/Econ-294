@@ -25,7 +25,7 @@ df.td <- read.table(
   sep = "\t",
   header = T
 )
-##QuyLamAssignment2$s2a <- ???
+QuyLamAssignment2$s2a <- print(4785)
 QuyLamAssignment2$s2b <- ncol(df.td)
 QuyLamAssignment2$s2c <- names(df.td)
 QuyLamAssignment2$s2d <- mean(df.td$weight, na.rm = FALSE)
@@ -63,5 +63,4 @@ sort(unique(org_example$educ))
 month <- aggregate(rw ~ month,org_example,mean)
 year <- aggregate(rw ~ year,org_example,mean)
 educ <- aggregate(rw ~ educ,org_example,mean)
-dd <- data.frame(year,month,educ)
 
