@@ -68,17 +68,5 @@ QuyLamAssignment2$s3d <- paste(arr[2,2,1],arr[2,2,2],arr[2,2,3], sep = "")
 #extract the first three letters of my first name
 QuyLamAssignment2$s3e <- paste(arr[2,3,2],arr[3,1,3],arr[1,3,3], sep = "")
 
-
-#Question 4
-org_example <- read.dta(
-  file = "http://people.ucsc.edu/~aspearot/Econ_217_Data/org_example.dta"
-)
-sort(unique(org_example$year))
-sort(unique(org_example$month))
-sort(unique(org_example$educ))
-month <- aggregate(rw ~ month,org_example,mean)
-year <- aggregate(rw ~ year,org_example,mean)
-educ <- aggregate(rw ~ educ,org_example,mean)
-
 #create a .RData file 
-save(QuyLamAssignment2, file = "QuylamAssignment2.RData")
+save(QuyLamAssignment2, file = "~/Desktop/Econ-294/QuylamAssignment2.RData")
