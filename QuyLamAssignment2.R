@@ -25,8 +25,7 @@ df.td <- read.table(
   sep = "\t",
   header = T
 )
-str(df.td) #getting info about how many observations in data
-QuyLamAssignment2$s2a <- print("4785")
+QuyLamAssignment2$s2a <- nrow(df.td)
 QuyLamAssignment2$s2b <- ncol(df.td) 
 QuyLamAssignment2$s2c <- names(df.td)
 QuyLamAssignment2$s2d <- mean(df.td$weight, na.rm = FALSE)
