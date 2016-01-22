@@ -1,4 +1,6 @@
+########################################################################
 #Question 0
+
 QuyLamAssignment2 <-list(
   firstName = "Quy",
   lastName = "Lam",
@@ -19,7 +21,9 @@ QuyLamAssignment2$s1b <- ncol(diamonds)
 QuyLamAssignment2$s1c <- names(diamonds)
 QuyLamAssignment2$s1d <- summary(diamonds$price)
 
+########################################################################
 #Question 2
+
 df.td <- read.table(
   file = "https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_TSV.txt",
   sep = "\t",
@@ -30,20 +34,25 @@ QuyLamAssignment2$s2b <- ncol(df.td)
 QuyLamAssignment2$s2c <- names(df.td)
 QuyLamAssignment2$s2d <- mean(df.td$weight, na.rm = FALSE)
 QuyLamAssignment2$s2e <- median(df.td$weight, na.rm = FALSE)
+
 #create a histogram of weights
 hist(df.td$weight, xlab = "Weights", main = "Histogram of Weights")
 #create a table of weights
 table(df.td$weight)
+
 #create a new weight column,setting weights observations with missing data to NA.
 df.td$weight2 <- ifelse(df.td$weight < 996 | df.td$weight > 999,
                        yes = df.td$weight,
                        no = NA)
+
 #create histogram and table to check 
 hist(df.td$weight2, xlab = "Weights", main = "Histogram of Weights")
 table(df.td$weight2)
+
 #new mean and median weight of adjusted weight column
 QuyLamAssignment2$s2f <- mean(df.td$weight2, na.rm = TRUE)
 QuyLamAssignment2$s2g <- median(df.td$weight2, na.rm = TRUE)
+
 #create subsets for male and female separately
 df_m <- subset(df.td,SEX == 1) #subset for male
 df_f <- subset(df.td,SEX ==2) #subset for woman
@@ -52,7 +61,9 @@ QuyLamAssignment2$s2h <- summary(df_f$weight2)
 #summary of weights for men
 QuyLamAssignment2$s2i <- summary(df_m$weight2)
 
+########################################################################
 #Question 3
+
 vec <-c(letters,LETTERS) 
 #extract even index values from vec
 QuyLamAssignment2$s3a <- vec[seq(2, length(vec),2)]
@@ -67,5 +78,6 @@ QuyLamAssignment2$s3d <- paste(arr[2,2,1],arr[2,2,2],arr[2,2,3], sep = ",")
 #extract the first three letters of my first name
 QuyLamAssignment2$s3e <- paste(arr[2,3,2],arr[3,1,3],arr[1,3,3], sep = "")
 
+########################################################################
 #create a .RData file 
 save(QuyLamAssignment2, file = "~/Desktop/Econ-294/QuylamAssignment2.RData")
