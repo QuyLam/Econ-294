@@ -80,3 +80,5 @@ month <- aggregate(rw ~ month,org_example,mean)
 year <- aggregate(rw ~ year,org_example,mean)
 educ <- aggregate(rw ~ educ,org_example,mean)
 
+#create a .RData file 
+save(QuyLamAssignment2, file = "QuylamAssignment2.RData")
