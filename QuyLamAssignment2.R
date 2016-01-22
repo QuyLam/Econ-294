@@ -41,7 +41,7 @@ df.td$weight2 <- ifelse(df.td$weight < 996 | df.td$weight > 999,
 #create histogram and table to check 
 hist(df.td$weight2, xlab = "Weights", main = "Histogram of Weights")
 table(df.td$weight2)
-#new meean and median weight of adjusted weight column
+#new mean and median weight of adjusted weight column
 QuyLamAssignment2$s2f <- mean(df.td$weight2, na.rm = TRUE)
 QuyLamAssignment2$s2g <- median(df.td$weight2, na.rm = TRUE)
 #create subsets for male and female separately
@@ -62,7 +62,7 @@ QuyLamAssignment2$s3b <-paste(vec[c(43,21,25)],collapse = "")
 arr <- array(c(letters,LETTERS),dim = c(3,3,3)) #create array
 # extract the first column from the second matrix of arr
 QuyLamAssignment2$s3c <- paste(arr[1,1,2],arr[2,1,2],arr[3,1,2], sep = "")
-#extract the middle values from each of the three matrics in arr
+#extract the middle values from each of the three matrices in arr
 QuyLamAssignment2$s3d <- paste(arr[2,2,1],arr[2,2,2],arr[2,2,3], sep = "")
 #extract the first three letters of my first name
 QuyLamAssignment2$s3e <- paste(arr[2,3,2],arr[3,1,3],arr[1,3,3], sep = "")
