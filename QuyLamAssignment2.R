@@ -61,9 +61,9 @@ QuyLamAssignment2$s3b <-paste(vec[c(43,21,25)],collapse = "")
 
 arr <- array(c(letters,LETTERS),dim = c(3,3,3)) #create array
 # extract the first column from the second matrix of arr
-QuyLamAssignment2$s3c <- paste(arr[1,1,2],arr[2,1,2],arr[3,1,2], sep = "")
+QuyLamAssignment2$s3c <- paste(arr[1,1,2],arr[2,1,2],arr[3,1,2], sep = ",")
 #extract the middle values from each of the three matrices in arr
-QuyLamAssignment2$s3d <- paste(arr[2,2,1],arr[2,2,2],arr[2,2,3], sep = "")
+QuyLamAssignment2$s3d <- paste(arr[2,2,1],arr[2,2,2],arr[2,2,3], sep = ",")
 #extract the first three letters of my first name
 QuyLamAssignment2$s3e <- paste(arr[2,3,2],arr[3,1,3],arr[1,3,3], sep = "")
 
