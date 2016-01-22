@@ -63,7 +63,7 @@ img {
 <div id="header">
 <h1 class="title">QuyLamAssignment2.R</h1>
 <h4 class="author"><em>quylam</em></h4>
-<h4 class="date"><em>Fri Jan 22 00:56:12 2016</em></h4>
+<h4 class="date"><em>Fri Jan 22 15:11:56 2016</em></h4>
 </div>
 
 
@@ -94,20 +94,8 @@ df.td &lt;- read.table(
   sep = &quot;\t&quot;,
   header = T
 )
-str(df.td) #getting info about how many observations in data</code></pre>
-<pre><code>## 'data.frame':    4785 obs. of  9 variables:
-##  $ HHX   : int  16 20 69 87 88 99 101 122 129 134 ...
-##  $ FMX   : int  1 1 1 1 1 1 1 1 1 1 ...
-##  $ FPX   : int  2 1 2 1 1 1 1 1 2 2 ...
-##  $ SEX   : int  1 1 2 1 2 2 1 1 2 2 ...
-##  $ BMI   : num  33.4 26.5 32.1 26.6 27.1 ...
-##  $ SLEEP : int  8 7 7 8 8 98 6 7 7 7 ...
-##  $ educ  : int  16 14 9 14 13 12 13 12 16 18 ...
-##  $ height: int  74 70 61 68 66 98 99 70 65 64 ...
-##  $ weight: int  260 185 170 175 168 998 172 170 147 148 ...</code></pre>
-<pre class="r"><code>QuyLamAssignment2$s2a &lt;- print(&quot;4785&quot;)</code></pre>
-<pre><code>## [1] &quot;4785&quot;</code></pre>
-<pre class="r"><code>QuyLamAssignment2$s2b &lt;- ncol(df.td) 
+QuyLamAssignment2$s2a &lt;- nrow(df.td)
+QuyLamAssignment2$s2b &lt;- ncol(df.td) 
 QuyLamAssignment2$s2c &lt;- names(df.td)
 QuyLamAssignment2$s2d &lt;- mean(df.td$weight, na.rm = FALSE)
 QuyLamAssignment2$s2e &lt;- median(df.td$weight, na.rm = FALSE)
@@ -166,7 +154,7 @@ hist(df.td$weight2, xlab = &quot;Weights&quot;, main = &quot;Histogram of Weight
 ##   1  70   3   2  10   3   2  37   2   3   9   1   2  19   1   3  15   2 
 ## 278 280 283 285 286 288 289 290 295 298 
 ##   1  15   1   7   1   1   1   7   8   1</code></pre>
-<pre class="r"><code>#new meean and median weight of adjusted weight column
+<pre class="r"><code>#new mean and median weight of adjusted weight column
 QuyLamAssignment2$s2f &lt;- mean(df.td$weight2, na.rm = TRUE)
 QuyLamAssignment2$s2g &lt;- median(df.td$weight2, na.rm = TRUE)
 #create subsets for male and female separately
@@ -186,31 +174,14 @@ QuyLamAssignment2$s3b &lt;-paste(vec[c(43,21,25)],collapse = &quot;&quot;)
 
 arr &lt;- array(c(letters,LETTERS),dim = c(3,3,3)) #create array
 # extract the first column from the second matrix of arr
-QuyLamAssignment2$s3c &lt;- paste(arr[1,1,2],arr[2,1,2],arr[3,1,2], sep = &quot;&quot;)
-#extract the middle values from each of the three matrics in arr
-QuyLamAssignment2$s3d &lt;- paste(arr[2,2,1],arr[2,2,2],arr[2,2,3], sep = &quot;&quot;)
+QuyLamAssignment2$s3c &lt;- paste(arr[1,1,2],arr[2,1,2],arr[3,1,2], sep = &quot;,&quot;)
+#extract the middle values from each of the three matrices in arr
+QuyLamAssignment2$s3d &lt;- paste(arr[2,2,1],arr[2,2,2],arr[2,2,3], sep = &quot;,&quot;)
 #extract the first three letters of my first name
 QuyLamAssignment2$s3e &lt;- paste(arr[2,3,2],arr[3,1,3],arr[1,3,3], sep = &quot;&quot;)
 
-
-#Question 4
-org_example &lt;- read.dta(
-  file = &quot;http://people.ucsc.edu/~aspearot/Econ_217_Data/org_example.dta&quot;
-)</code></pre>
-<pre><code>## Warning in read.dta(file = &quot;http://people.ucsc.edu/~aspearot/Econ_217_Data/
-## org_example.dta&quot;): value labels ('fipscounty') for 'fipscounty' are missing</code></pre>
-<pre><code>## Warning in read.dta(file = &quot;http://people.ucsc.edu/~aspearot/Econ_217_Data/
-## org_example.dta&quot;): value labels ('ind12') for 'ind12' are missing</code></pre>
-<pre class="r"><code>sort(unique(org_example$year))</code></pre>
-<pre><code>## [1] 1983 1988 1993 1998 2003 2008 2013</code></pre>
-<pre class="r"><code>sort(unique(org_example$month))</code></pre>
-<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12</code></pre>
-<pre class="r"><code>sort(unique(org_example$educ))</code></pre>
-<pre><code>## [1] LTHS         HS           Some college College      Advanced    
-## Levels: LTHS HS Some college College Advanced</code></pre>
-<pre class="r"><code>month &lt;- aggregate(rw ~ month,org_example,mean)
-year &lt;- aggregate(rw ~ year,org_example,mean)
-educ &lt;- aggregate(rw ~ educ,org_example,mean)</code></pre>
+#create a .RData file 
+save(QuyLamAssignment2, file = &quot;~/Desktop/Econ-294/QuylamAssignment2.RData&quot;)</code></pre>
 
 
 </div>
