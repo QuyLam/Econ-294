@@ -54,12 +54,12 @@ QuyLamAssignment2$s2f <- mean(df.td$weight2, na.rm = TRUE)
 QuyLamAssignment2$s2g <- median(df.td$weight2, na.rm = TRUE)
 
 #create subsets for male and female separately
-df_m <- subset(df.td,SEX == 1) #subset for male
+df_m <- subset(df.td,SEX == 1) #subset for men
 df_f <- subset(df.td,SEX ==2) #subset for woman
-#summary of weights for woman
-QuyLamAssignment2$s2h <- summary(df_f$weight2)
 #summary of weights for men
-QuyLamAssignment2$s2i <- summary(df_m$weight2)
+QuyLamAssignment2$s2h <- summary(df_m$weight2)
+#summary of weights for woman
+QuyLamAssignment2$s2i <- summary(df_f$weight2)
 
 ########################################################################
 #Question 3
@@ -72,11 +72,31 @@ QuyLamAssignment2$s3b <-paste(vec[c(43,21,25)],collapse = "")
 
 arr <- array(c(letters,LETTERS),dim = c(3,3,3)) #create array
 # extract the first column from the second matrix of arr
-QuyLamAssignment2$s3c <- paste(arr[1,1,2],arr[2,1,2],arr[3,1,2], sep = ",")
+QuyLamAssignment2$s3c <- arr[,1,2]
 #extract the middle values from each of the three matrices in arr
-QuyLamAssignment2$s3d <- paste(arr[2,2,1],arr[2,2,2],arr[2,2,3], sep = ",")
+QuyLamAssignment2$s3d <- arr[2,2,]
 #extract the first three letters of my first name
 QuyLamAssignment2$s3e <- paste(arr[2,3,2],arr[3,1,3],arr[1,3,3], sep = "")
+
+########################################################################
+#Question 4
+library(foreign)
+org_example <- read.dta(
+  file = "https://github.com/EconomiCurtis/econ294_2015/raw/master/data/org_example.dta"
+)
+
+require(dplyr)
+question4 <- aggregate(
+  org_example$rw,
+  by = list(
+    year = org_example$year,
+    month = org_example$month,
+    educ = org_example$educ
+  ),
+  FUN = mean, na.rm = T
+)
+names(question4)[4] <- "rw_mean"
+QuyLamAssignment2$s4 <-question4
 
 ########################################################################
 #create a .RData file 
