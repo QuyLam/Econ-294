@@ -1,8 +1,3 @@
-#' Quy Lam
-#' Winter 2016
-#' Assignment 3
-#' 
-
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # 0 
@@ -38,7 +33,7 @@ print(nrow(df.ex.2))
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # 3.Arrange
-df.ex.3a <- df.ex.2 %>% arrange(year,month)
+df.ex.3a <- df.ex %>% arrange(year,month)
 
 # 4.Select
 df.ex.4a <- df.ex.3a %>% select(year:age)
@@ -57,7 +52,6 @@ stndz <- function(x){
 nrmlz <- function(x){
   (x - min(x, na.rm = T)) / (max(x, na.rm = t) - min(x, na.rm = T))
 }
-#nrmlz = function(x) (x - min(x,na.rm = T))/diff(range(x, na.rm = T))
 
 df.ex.5a <- df.ex %>% 
   mutate(
