@@ -36,8 +36,8 @@ print(nrow(df.ex.2))
 df.ex.3a <- df.ex %>% arrange(year,month)
 
 # 4.Select
-df.ex.4a <- df.ex.3a %>% select(year:age)
-df.ex.4b <- df.ex.3a %>% select(year,month,starts_with("i"))
+df.ex.4a <- df.ex  %>% select(year:age)
+df.ex.4b <- df.ex %>% select(year,month,starts_with("i"))
 print(distinct(select(df.ex,state)))
 
 # 5.Mutate
