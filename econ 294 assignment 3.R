@@ -108,7 +108,7 @@ print(
 )
 
 # 7.
-df <-df.ex %>% arrange(year,month,desc(as.character(df.ex$state)))
+df.ex.7a <-df.ex %>% arrange(year,month,desc(as.character(df.ex$state)))
 
 
 
