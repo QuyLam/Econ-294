@@ -81,6 +81,11 @@ df.ex.5b <- df.ex %>%
     count       = n()
   ) 
 
+#double check
+df.ex.5b %>% 
+  dplyr::select(year,month,rw,rw.stndz,rw_nrmlz,count) %>%
+  head(5)
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # 6.Summarize
 df.ex.6 <- df.ex %>% 
