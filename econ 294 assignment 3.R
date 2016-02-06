@@ -33,13 +33,26 @@ print(nrow(df.ex.2))
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # 3.Arrange
-df.ex.3a <- df.ex %>% arrange(year,month)
+df.ex.3a <- df.ex %>% 
+  dplyr::arrange(
+    year,month
+    )
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # 4.Select
-df.ex.4a <- df.ex  %>% select(year:age)
-df.ex.4b <- df.ex %>% select(year,month,starts_with("i"))
+df.ex.4a <- df.ex  %>% 
+  dplyr::select(
+    year:age
+    )
+
+df.ex.4b <- df.ex %>% 
+  dplyr::select(
+    year,month,starts_with("i")
+    )
+
 print(distinct(select(df.ex,state)))
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # 5.Mutate
 # 1st function stndz & returns the standard scores 
 
@@ -54,27 +67,25 @@ nrmlz <- function(x){
 }
 
 df.ex.5a <- df.ex %>% 
-  mutate(
+  dplyr::mutate(
     rw.stndz = stndz(rw),
     rw_nrmlz = nrmlz(rw)
   ) 
 
 
-df.ex.5b <- df.ex.5a %>% 
-  group_by(year,month) %>%   
-  mutate(
+df.ex.5b <- df.ex %>% 
+  dplyr::group_by(year,month) %>%   
+  dplyr::mutate(
     rw.stndz = stndz(rw),
     rw_nrmlz = nrmlz(rw),
     count       = n()
-  ) %>%
-  select(year,month,rw,rw.stndz,rw_nrmlz,count)
+  ) 
 
-print(head(df.ex.5b)) #for double check
-
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # 6.Summarize
 df.ex.6 <- df.ex %>% 
-  group_by(year,month,state) %>%               
-  summarise(
+  dplyr::group_by(year,month,state) %>%               
+  dplyr::summarise(
     rw_min    = min(rw, na.rm = T),
     rw_1stQnt = quantile(rw, 0.25,na.rm = T),
     rw_avg    = mean(rw, na.rm = T),
@@ -101,8 +112,12 @@ print(
     )
 )
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # 7.
-df.ex.7a <-df.ex %>% arrange(year,month,desc(as.character(df.ex$state)))
+df.ex.7a <-df.ex %>% 
+  dplyr::arrange(
+    year,month,desc(as.character(df.ex$state))
+    )
 
 
 
