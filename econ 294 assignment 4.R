@@ -60,7 +60,7 @@ print(nrow(flights.2a))
 
 #all flights delayed by an hour or more
 
-flights.2b <- subset(flights, pdep_delay + arr_delay >= 60)
+flights.2b <- subset(flights, dep_delay + arr_delay >= 60)
 print(nrow(flights.2b))
 
 #all flights which arrival delay was more than twice departure delay
