@@ -66,15 +66,6 @@ print(nrow(flights.2b))
 #all flights which arrival delay was more than twice departure delay
 flights.2c <- subset(flights, arr_delay > ((2)*dep_delay))
 
-day_delay <- dplyr::filter( summarize(
-  group_by( dplyr::filter(
-    flights,
-    !is.na(dep_delay) ),
-    date ),
-  delay = mean(dep_delay), n = n()
-),
-n > 10 )
-
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # 4
 
@@ -249,6 +240,7 @@ df <- df %>%
       c("sex","age","state"), #name of new column(s)
       sep = "_" # read "sep" argument, if numeric: index position to split at.
     )
+View(df1)
 ####11d
   df <- data.frame(
     subject = c(1,2,3,4),
@@ -257,16 +249,11 @@ df <- df %>%
     city = c("DC","NY","WA",NA),
     value = c(3,4,5,6)
   )
-  
-  data.frame(
-    subject = c(1,2,3,4),
-    demo = c("f.11.DC", "f.55.NY", "m.65.WA", NA),
-    value = c(3,4,5,6)
-  )
-  
+
 df2 <- df %>%
     unite(
       col = demo, 
       ... = sex, age, city, 
       sep = "." 
     ) 
+View(df2)
